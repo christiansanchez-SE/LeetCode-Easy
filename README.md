@@ -25,3 +25,31 @@ Here are some of the problems I've solved:
 
 The solutions are organized in folders by problem difficulty and topic. Each solution contains a brief explanation of the approach, the code, and the time and space complexity analysis.
 
+## How to Use
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/leetcode-practice.git
+    cd leetcode-practice
+    ```
+
+2. Navigate to the problem folder and run the solution:
+    ```bash
+    python easy/two_sum.py
+    ```
+
+3. Explore the solutions and learn from the explanations provided in the comments.
+
+## Contributing
+
+I welcome contributions! If you have a better solution or an additional problem to add, please fork the repository and submit a pull request.
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-new-problem`).
+3. Commit your changes (`git commit -am 'Add new problem solution'`).
+4. Push to the branch (`git push origin feature-new-problem`).
+5. Create a new pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
