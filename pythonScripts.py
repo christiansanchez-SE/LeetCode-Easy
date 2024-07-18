@@ -125,3 +125,43 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
+        # Step 1: Check if the number is negative
+        if x < 0:
+            return False  # Negative numbers are not palindromes
+        
+        # Step 2: Store the original number
+        original = x
+        
+        # Step 3: Reverse the digits of the number
+        reversed_num = 0
+        while x != 0:
+            last_digit = x % 10        # Extract the last digit
+            reversed_num = reversed_num * 10 + last_digit  # Add it to the reversed number
+            x //= 10  # Remove the last digit from x
+        
+        # Step 4: Compare the original and reversed numbers
+        return original == reversed_num  # Return True if they are the same, else False
+
+# Example usage
+sol = Solution()
+print(sol.isPalindrome(121))  # Output: True
+print(sol.isPalindrome(-121)) # Output: False
+print(sol.isPalindrome(10))   # Output: False
+
+# Example 1: x = 121
+# Initial number: 121
+# Reverse process:
+# Last digit: 1, Reversed number: 1, Remaining number: 12
+# Last digit: 2, Reversed number: 12, Remaining number: 1
+# Last digit: 1, Reversed number: 121, Remaining number: 0
+# Reversed number is 121, which is the same as the original. So, 121 is a palindrome
+
+# Example 2: x = -121
+# The number is negative. Immediately return False
+
+# Example 3: x = 10
+# Initial number: 10
+# Reverse process:
+# Last digit: 0, Reversed number: 0, Remaining number: 1
+# Last digit: 1, Reversed number: 1, Remaining number: 0
+# Reversed number is 1, which is not the same as the original 10. So, 10 is not a palindrome
