@@ -36,3 +36,20 @@ var twoSum = function(nums, target) {
 console.log(twoSum([2, 7, 11, 15], 9));  // Output: [0, 1]
 console.log(twoSum([3, 2, 4], 6));       // Output: [1, 2]
 console.log(twoSum([3, 3], 6));          // Output: [0, 1]
+
+
+//  How it works for example one
+    // Iteration 1: index = 0, num = 2 : complement = 9 - 2 = 7 : 7 is not in numDict : Update numDict to {2: 0}
+    // Iteration 2: index = 1, num = 7 : complement = 9 - 7 = 2 : 2 is in numDict with index 0
+    // Return [0, 1]
+
+// How it works for example two
+    // Iteration 1: index = 0, num = 3 : complement = 6 - 3 = 3 : 3 is not in numDict : Update numDict to {3: 0}
+    // Iteration 2: index = 1, num = 2 : complement = 6 - 2 = 4 : 4 is not in numDict : Update numDict to {3: 0, 2: 1}
+    // Iteration 3: index = 2, num = 4 : complement = 6 - 4 = 2 : 2 is in numDict with index 1 
+    // Return [1, 2]
+
+// How it works for example three
+    // Iteration 1: index = 0, num = 3 : complement = 6 - 3 = 3 : 3 is not in numDict : Update numDict to {3: 0}
+    // Iteration 2: index = 1, num = 3 : complement = 6 - 3 = 3 : 3 is in numDict with index 0
+    // Return [0, 1]
