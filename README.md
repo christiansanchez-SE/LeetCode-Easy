@@ -19,6 +19,7 @@ I am currently practicing coding problems on LeetCode to enhance my problem-solv
 Here are some of the problems I've solved:
 
 1. [Two Sum](https://leetcode.com/problems/two-sum/)
+2. [Palindrome Number](https://leetcode.com/problems/palindrome-number/)
 
 ## Solutions
 
