@@ -1,3 +1,4 @@
+# Two Sums
 # Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 # You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -85,3 +86,42 @@ print(solution.twoSum([3, 3], 6))
     # Iteration 1: num = 3, complement = 6 - 3 = 3, num_dict = {3: 0}
     # Iteration 2: num = 3, complement = 6 - 3 = 3 (found in num_dict)
     # Return [0, 1]
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+
+# 2. Palindrome Number
+
+# Given an integer x, return true if x is a palindrome, and false otherwise.
+
+ 
+
+# Example 1:
+
+# Input: x = 121
+# Output: true
+# Explanation: 121 reads as 121 from left to right and from right to left.
+# Example 2:
+
+# Input: x = -121
+# Output: false
+# Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+# Example 3:
+
+# Input: x = 10
+# Output: false
+# Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+ 
+
+# Constraints:
+
+# -2^31 <= x <= 2^31 - 1
+ 
+
+# Follow up: Could you solve it without converting the integer to a string?
+
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
