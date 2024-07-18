@@ -93,8 +93,6 @@ print(solution.twoSum([3, 3], 6))
 
 # Given an integer x, return true if x is a palindrome, and false otherwise.
 
- 
-
 # Example 1:
 
 # Input: x = 121
@@ -125,7 +123,7 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-        # Step 1: Check if the number is negative
+        # Step 1: Check if the number is negative : If a number is negative, it's not a palindrome. For example, -121 is not the same when read backward because it would be 121- : For positive numbers, we need to reverse the digits of the number and compare it with the original number. If they are the same, the number is a palindrome
         if x < 0:
             return False  # Negative numbers are not palindromes
         
