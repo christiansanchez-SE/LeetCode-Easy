@@ -136,3 +136,54 @@ console.log(isPalindrome(10));
 // Last digit: 0, Reversed number: 0, Remaining number: 1
 // Last digit: 1, Reversed number: 1, Remaining number: 0
 // Reversed number is 1, which is not the same as the original 10. So, 10 is not a palindrome
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var romanToInt = function(s) {
+    // Step 1: Create a mapping of Roman numerals to their integer values
+    const romanToInt = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    };
+
+    // Step 2: Initialize the total sum to 0
+    let total = 0;
+
+    // Step 3: Iterate through the string and calculate the integer value
+    for (let i = 0; i < s.length; i++) {
+        // If the current character is the last one or its value is greater than or equal to the next one
+        if (i === s.length - 1 || romanToInt[s[i]] >= romanToInt[s[i + 1]]) {
+            total += romanToInt[s[i]];
+        } else {
+            total -= romanToInt[s[i]];
+        }
+    }
+
+    return total;
+};
+
+// Example usage
+console.log(romanToInt("III"));    // Output: 3
+console.log(romanToInt("LVIII"));  // Output: 58
+console.log(romanToInt("MCMXCIV")); // Output: 1994
+
+// Example 1: s = "III"
+// Iterate through: I (1) + I (1) + I (1)
+// Total: 1 + 1 + 1 = 3
+
+// Example 2: s = "LVIII"
+// Iterate through: L (50) + V (5) + I (1) + I (1) + I (1)
+// Total: 50 + 5 + 1 + 1 + 1 = 58
+
+// Example 3: s = "MCMXCIV"
+// Iterate through: M (1000) + CM (900) + XC (90) + IV (4)
+// Total: 1000 + 900 + 90 + 4 = 1994
