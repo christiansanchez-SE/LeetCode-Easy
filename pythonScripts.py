@@ -163,3 +163,101 @@ print(sol.isPalindrome(10))   # Output: False
 # Last digit: 0, Reversed number: 0, Remaining number: 1
 # Last digit: 1, Reversed number: 1, Remaining number: 0
 # Reversed number is 1, which is not the same as the original 10. So, 10 is not a palindrome
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+
+# Roman to Integer
+
+# Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+# Symbol       Value
+# I             1
+# V             5
+# X             10
+# L             50
+# C             100
+# D             500
+# M             1000
+# For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+
+# Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+
+# I can be placed before V (5) and X (10) to make 4 and 9. 
+# X can be placed before L (50) and C (100) to make 40 and 90. 
+# C can be placed before D (500) and M (1000) to make 400 and 900.
+# Given a roman numeral, convert it to an integer.
+
+ 
+
+# Example 1:
+
+# Input: s = "III"
+# Output: 3
+# Explanation: III = 3.
+# Example 2:
+
+# Input: s = "LVIII"
+# Output: 58
+# Explanation: L = 50, V= 5, III = 3.
+# Example 3:
+
+# Input: s = "MCMXCIV"
+# Output: 1994
+# Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+ 
+
+# Constraints:
+
+# 1 <= s.length <= 15
+# s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
+# It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        # Step 1: Create a mapping of Roman numerals to their integer values
+        roman_to_int = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+
+        # Step 2: Initialize the total sum to 0
+        total = 0
+
+        # Step 3: Iterate through the string and calculate the integer value
+        i = 0
+        while i < len(s):
+            # If the current character is the last one or its value is greater than or equal to the next one
+            if i == len(s) - 1 or roman_to_int[s[i]] >= roman_to_int[s[i + 1]]:
+                total += roman_to_int[s[i]]
+            else:
+                total -= roman_to_int[s[i]]
+            i += 1
+
+        return total
+
+# Example usage
+sol = Solution()
+print(sol.romanToInt("III"))    # Output: 3
+print(sol.romanToInt("LVIII"))  # Output: 58
+print(sol.romanToInt("MCMXCIV")) # Output: 1994
+
+# Example 1: s = "III"
+# Iterate through: I (1) + I (1) + I (1)
+# Total: 1 + 1 + 1 = 3
+
+# Example 2: s = "LVIII"
+# Iterate through: L (50) + V (5) + I (1) + I (1) + I (1)
+# Total: 50 + 5 + 1 + 1 + 1 = 58
+
+# Example 3: s = "MCMXCIV"
+# Iterate through: M (1000) + CM (900) + XC (90) + IV (4)
+# Total: 1000 + 900 + 90 + 4 = 1994
