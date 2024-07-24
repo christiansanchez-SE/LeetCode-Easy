@@ -187,3 +187,49 @@ console.log(romanToInt("MCMXCIV")); // Output: 1994
 // Example 3: s = "MCMXCIV"
 // Iterate through: M (1000) + CM (900) + XC (90) + IV (4)
 // Total: 1000 + 900 + 90 + 4 = 1994
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+    // Step 1: Handle edge cases
+    if (strs.length === 0) {
+        return "";
+    }
+
+    // Step 2: Initialize the prefix as the first string
+    let prefix = strs[0];
+
+    // Step 3: Iterate through the strings
+    for (let i = 1; i < strs.length; i++) {
+        // While the current prefix is not found at the start of the string, trim the prefix
+        while (strs[i].indexOf(prefix) !== 0) {
+            prefix = prefix.substring(0, prefix.length - 1);
+            if (prefix === "") {
+                return "";
+            }
+        }
+    }
+
+    return prefix;
+};
+
+// Example usage
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));  // Output: "fl"
+console.log(longestCommonPrefix(["dog", "racecar", "car"]));    // Output: ""
+
+// Example 1: ["flower", "flow", "flight"]
+// prefix is initialized to "flower"
+// "flower" and "flow" share the prefix "flow"
+// "flow" and "flight" share the prefix "fl"
+// The function returns "fl"
+
+// Example 2: ["dog", "racecar", "car"]
+// prefix is initialized to "dog"
+// "dog" and "racecar" share no common prefix, so prefix is reduced to an empty string
+// The function returns an empty string
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //

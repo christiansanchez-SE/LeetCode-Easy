@@ -261,3 +261,43 @@ print(sol.romanToInt("MCMXCIV")) # Output: 1994
 # Example 3: s = "MCMXCIV"
 # Iterate through: M (1000) + CM (900) + XC (90) + IV (4)
 # Total: 1000 + 900 + 90 + 4 = 1994
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        # Step 1: Handle edge cases
+        if not strs:
+            return ""
+        
+        # Step 2: Initialize the prefix as the first string
+        prefix = strs[0]
+        
+        # Step 3: Iterate through the strings
+        for string in strs[1:]:
+            # While the current prefix is not found at the start of the string, trim the prefix
+            while string.find(prefix) != 0:
+                prefix = prefix[:-1]
+                if not prefix:
+                    return ""
+        
+        return prefix
+
+# Example usage
+sol = Solution()
+print(sol.longestCommonPrefix(["flower","flow","flight"]))  
+print(sol.longestCommonPrefix(["dog","racecar","car"]))    
+
+# Example 1:
+# The list ["flower","flow","flight"] is passed to longestCommonPrefix
+# The function initializes prefix to "flower" and then iteratively shortens it until it finds "fl" as the common prefix for all strings
+
+# Example 2:
+# The list ["dog","racecar","car"] is passed to longestCommonPrefix
+# The function initializes prefix to "dog" and then shortens it to an empty string since there is no common prefix among the strings
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
