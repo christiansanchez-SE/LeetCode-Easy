@@ -89,10 +89,14 @@ console.log(twoSum([3, 3], 6));          // Output: [0, 1]
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
-function isPalindrome(x) {
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
     // Step 1: Check if the number is negative
     if (x < 0) {
-        return false;  // Negative numbers are not palindromes
+        return false;  
     }
 
     // Step 2: Store the original number
@@ -100,34 +104,33 @@ function isPalindrome(x) {
 
     // Step 3: Reverse the digits of the number
     let reversedNum = 0;
-    while (x !== 0) {
-        let lastDigit = x % 10;          // Extract the last digit
-        reversedNum = reversedNum * 10 + lastDigit;  // Add it to the reversed number
-        x = Math.floor(x / 10);  // Remove the last digit from x
+    while (x > 0) {
+        let lastDigit = x % 10;          
+        reversedNum = reversedNum * 10 + lastDigit;  
+        x = Math.floor(x / 10);  
     }
 
     // Step 4: Compare the original and reversed numbers
-    return original === reversedNum;  // Return true if they are the same, else false
-}
+    return original === reversedNum;  
+};
 
 // Example usage
-console.log(isPalindrome(121));  // Output: true
-console.log(isPalindrome(-121)); // Output: false
-console.log(isPalindrome(10));   // Output: false
+console.log(isPalindrome(121));  
+console.log(isPalindrome(-121)); 
+console.log(isPalindrome(10));   
 
 // Example 1: x = 121
-
 // Initial number: 121
 // Reverse process:
 // Last digit: 1, Reversed number: 1, Remaining number: 12
 // Last digit: 2, Reversed number: 12, Remaining number: 1
 // Last digit: 1, Reversed number: 121, Remaining number: 0
 // Reversed number is 121, which is the same as the original. So, 121 is a palindrome
+
 // Example 2: x = -121
-
 // The number is negative. Immediately return false
-// Example 3: x = 10
 
+// Example 3: x = 10
 // Initial number: 10
 // Reverse process:
 // Last digit: 0, Reversed number: 0, Remaining number: 1
