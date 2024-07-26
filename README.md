@@ -20,7 +20,8 @@ Here are some of the problems I've solved:
 
 1. [Two Sum](https://leetcode.com/problems/two-sum/)
 2. [Palindrome Number](https://leetcode.com/problems/palindrome-number/)
-2. [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
+3. [Roman to Integer](https://leetcode.com/problems/roman-to-integer/description/)
+4. [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
 
 ## Solutions
 
