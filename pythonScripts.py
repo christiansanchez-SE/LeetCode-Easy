@@ -367,3 +367,6 @@ print(solution.isValid(s))  # Output: True
 
 s = "(]"
 print(solution.isValid(s))  # Output: False
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+

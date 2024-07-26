@@ -235,3 +235,38 @@ console.log(longestCommonPrefix(["dog", "racecar", "car"]));    // Output: ""
 // The function returns an empty string
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+var isValid = function(s) {
+    // Stack to keep track of opening brackets
+    let stack = [];
+    
+    // Dictionary to match opening and closing brackets
+    let bracketMap = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
+    
+    for (let char of s) {
+        if (char in bracketMap) {
+            // Pop the top element from the stack if it is not empty, otherwise assign a dummy value
+            let topElement = stack.length ? stack.pop() : '#';
+            
+            // If the mapped bracket of the current char doesn't match the top element of the stack
+            if (bracketMap[char] !== topElement) {
+                return false;
+            }
+        } else {
+            // Push the current opening bracket onto the stack
+            stack.push(char);
+        }
+    }
+    
+    // If the stack is empty, all the brackets are properly closed
+    return stack.length === 0;
+};
+
+// Example Usage:
+console.log(isValid("()"));      // Output: true
+console.log(isValid("()[]{}"));  // Output: true
+console.log(isValid("(]"));      // Output: false
