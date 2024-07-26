@@ -302,3 +302,68 @@ print(sol.longestCommonPrefix(["dog","racecar","car"]))
 # The function initializes prefix to "dog" and then shortens it to an empty string since there is no common prefix among the strings
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+
+# Valid Parentheses
+
+# Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+# An input string is valid if:
+
+# Open brackets must be closed by the same type of brackets.
+# Open brackets must be closed in the correct order.
+# Every close bracket has a corresponding open bracket of the same type.
+ 
+
+# Example 1:
+
+# Input: s = "()"
+# Output: true
+# Example 2:
+
+# Input: s = "()[]{}"
+# Output: true
+# Example 3:
+
+# Input: s = "(]"
+# Output: false
+ 
+
+# Constraints:
+
+# 1 <= s.length <= 104
+# s consists of parentheses only '()[]{}'.
+
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        # Stack to keep track of opening brackets
+        stack = []
+        
+        # Dictionary to match opening and closing brackets
+        bracket_map = {')': '(', '}': '{', ']': '['}
+        
+        for char in s:
+            if char in bracket_map:
+                # Pop the top element from the stack if it is not empty, otherwise assign a dummy value
+                top_element = stack.pop() if stack else '#'
+                
+                # If the mapped bracket of the current char doesn't match the top element of the stack
+                if bracket_map[char] != top_element:
+                    return False
+            else:
+                # Push the current opening bracket onto the stack
+                stack.append(char)
+        
+        # If the stack is empty, all the brackets are properly closed
+        return not stack
+ 
+# Example Usage:
+s = "()[]{}"
+solution = Solution()
+print(solution.isValid(s))  # Output: True
+
+s = "(]"
+print(solution.isValid(s))  # Output: False
