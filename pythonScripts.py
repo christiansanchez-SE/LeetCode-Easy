@@ -494,3 +494,147 @@ print("Modified array:", nums[:k])
 # 0 <= nums.length <= 100
 # 0 <= nums[i] <= 50
 # 0 <= val <= 100
+
+class Solution(object):
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        k = 0  # Initialize the counter for elements not equal to val
+
+        # Iterate through the array
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[k] = nums[i]
+                k += 1
+
+        return k
+
+# Example usage:
+solution = Solution()
+nums = [0, 1, 2, 2, 3, 0, 4, 2]
+val = 2
+k = solution.removeElement(nums, val)
+print("Number of elements not equal to val:", k)
+print("Modified array:", nums[:k])
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+
+# Merge Two Sorted Lists
+
+# You are given the heads of two sorted linked lists list1 and list2.
+
+# Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+# Return the head of the merged linked list.
+
+ 
+
+# Example 1:
+
+# 1R -> 2R -> 4R
+# 1P -> 3P -> 4P
+# ------------
+# 1P -> 1R -> 2R -> 3P -> 4R -> 4P
+
+# Input: list1 = [1,2,4], list2 = [1,3,4]
+# Output: [1,1,2,3,4,4]
+# Example 2:
+
+# Input: list1 = [], list2 = []
+# Output: []
+# Example 3:
+
+# Input: list1 = [], list2 = [0]
+# Output: [0]
+ 
+
+# Constraints:
+
+# The number of nodes in both lists is in the range [0, 50].
+# -100 <= Node.val <= 100
+# Both list1 and list2 are sorted in non-decreasing order.
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+# class Solution(object):
+#     def mergeTwoLists(self, list1, list2):
+#         """
+#         :type list1: Optional[ListNode]
+#         :type list2: Optional[ListNode]
+#         :rtype: Optional[ListNode]
+#         """
+#         # Create a dummy node to start the merged list
+#         dummy = ListNode()
+#         current = dummy
+        
+#         # Traverse both lists
+#         while list1 and list2:
+#             if list1.val < list2.val:
+#                 current.next = list1
+#                 list1 = list1.next
+#             else:
+#                 current.next = list2
+#                 list2 = list2.next
+#             current = current.next
+        
+#         # Append the remaining nodes
+#         if list1:
+#             current.next = list1
+#         else:
+#             current.next = list2
+        
+#         # Return the merged list, which starts from the next node of the dummy
+#         return dummy.next
+
+# # Function to print the list (for testing purposes)
+# def print_list(node):
+#     while node:
+#         print str(node.val) + " ->",
+#         node = node.next
+#     print "None"
+
+# # Create lists: list1 = [1,2,4], list2 = [1,3,4]
+# list1 = ListNode(1, ListNode(2, ListNode(4)))
+# list2 = ListNode(1, ListNode(3, ListNode(4)))
+
+# # Additional test cases
+# def create_linked_list(lst):
+#     if not lst:
+#         return None
+#     head = ListNode(lst[0])
+#     current = head
+#     for val in lst[1:]:
+#         current.next = ListNode(val)
+#         current = current.next
+#     return head
+
+# def test_merge(list1_vals, list2_vals):
+#     list1 = create_linked_list(list1_vals)
+#     list2 = create_linked_list(list2_vals)
+#     solution = Solution()
+#     merged_list = solution.mergeTwoLists(list1, list2)
+#     print_list(merged_list)
+
+# # Test case 1: list1 = [1,2,4], list2 = [1,3,4]
+# print("Test case 1:")
+# test_merge([1, 2, 4], [1, 3, 4])
+
+# # Test case 2: list1 = [], list2 = []
+# print("Test case 2:")
+# test_merge([], [])
+
+# # Test case 3: list1 = [], list2 = [0]
+# print("Test case 3:")
+# test_merge([], [0])
+
+# # Test case 4: list1 = [2, 5, 7], list2 = [1, 3, 4, 6]
+# print("Test case 4:")
+# test_merge([2, 5, 7], [1, 3, 4, 6])
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
