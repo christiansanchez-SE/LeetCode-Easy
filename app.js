@@ -272,3 +272,28 @@ console.log(isValid("()[]{}"));  // Output: true
 console.log(isValid("(]"));      // Output: false
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+class Solution {
+    removeDuplicates(nums) {
+        if (nums.length === 0) return 0;
+
+        let k = 1; // Start with the first element being unique
+
+        for (let i = 1; i < nums.length; i++) {
+            if (nums[i] !== nums[i - 1]) {
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+
+        return k;
+    }
+}
+
+// Example usage:
+const solution = new Solution();
+const nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+const k = solution.removeDuplicates(nums);
+
+console.log("Number of unique elements:", k);
+console.log("Modified array:", nums.slice(0, k));
