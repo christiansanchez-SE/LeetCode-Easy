@@ -437,3 +437,9 @@ class Solution(object):
                 k += 1
 
         return k
+
+nums = [0,0,1,1,1,2,2,3,3,4]
+solution = Solution()
+k = solution.removeDuplicates(nums)
+print("Number of unique elements:", k)
+print("Modified array:", nums[:k])
