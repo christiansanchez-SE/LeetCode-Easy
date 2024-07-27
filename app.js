@@ -330,3 +330,85 @@ console.log("Modified array:", nums.slice(0, k));
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function(list1, list2) {
+    // Create a dummy node to start the merged list
+    let dummy = new ListNode();
+    let current = dummy;
+    
+    // Traverse both lists
+    while (list1 !== null && list2 !== null) {
+        if (list1.val < list2.val) {
+            current.next = list1;
+            list1 = list1.next;
+        } else {
+            current.next = list2;
+            list2 = list2.next;
+        }
+        current = current.next;
+    }
+    
+    // Append the remaining nodes
+    if (list1 !== null) {
+        current.next = list1;
+    } else {
+        current.next = list2;
+    }
+    
+    // Return the merged list, which starts from the next node of the dummy
+    return dummy.next;
+};
+
+// Function to print the list (for testing purposes)
+function printList(node) {
+    let result = '';
+    while (node !== null) {
+        result += node.val + ' -> ';
+        node = node.next;
+    }
+    result += 'None';
+    console.log(result);
+}
+
+// Create linked lists for testing
+function createLinkedList(arr) {
+    if (arr.length === 0) {
+        return null;
+    }
+    let head = new ListNode(arr[0]);
+    let current = head;
+    for (let i = 1; i < arr.length; i++) {
+        current.next = new ListNode(arr[i]);
+        current = current.next;
+    }
+    return head;
+}
+
+// Test case 1: list1 = [1, 2, 4], list2 = [1, 3, 4]
+console.log("Test case 1:");
+printList(mergeTwoLists(createLinkedList([1, 2, 4]), createLinkedList([1, 3, 4])));
+
+// Test case 2: list1 = [], list2 = []
+console.log("Test case 2:");
+printList(mergeTwoLists(createLinkedList([]), createLinkedList([])));
+
+// Test case 3: list1 = [], list2 = [0]
+console.log("Test case 3:");
+printList(mergeTwoLists(createLinkedList([]), createLinkedList([0])));
+
+// Test case 4: list1 = [2, 5, 7], list2 = [1, 3, 4, 6]
+console.log("Test case 4:");
+printList(mergeTwoLists(createLinkedList([2, 5, 7]), createLinkedList([1, 3, 4, 6])));
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
