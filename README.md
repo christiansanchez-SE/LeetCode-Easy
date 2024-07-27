@@ -25,6 +25,7 @@ Here are some of the problems I've solved:
 5. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 6. [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
 7. [Remove Element](https://leetcode.com/problems/remove-element/description/)
+7. [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
 
 ## Solutions
 
