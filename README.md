@@ -24,6 +24,7 @@ Here are some of the problems I've solved:
 4. [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
 5. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 6. [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
+7. [Remove Element](https://leetcode.com/problems/remove-element/description/)
 
 ## Solutions
 
