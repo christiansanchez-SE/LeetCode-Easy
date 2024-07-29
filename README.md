@@ -26,6 +26,7 @@ Here are some of the problems I've solved:
 6. [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
 7. [Remove Element](https://leetcode.com/problems/remove-element/description/)
 8. [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
+9. [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/)
 
 ## Solutions
 
