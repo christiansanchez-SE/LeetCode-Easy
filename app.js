@@ -412,3 +412,18 @@ console.log("Test case 4:");
 printList(mergeTwoLists(createLinkedList([2, 5, 7]), createLinkedList([1, 3, 4, 6])));
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+    return haystack.indexOf(needle);
+};
+
+// Example usage:
+console.log(strStr("sadbutsad", "sad"));  // Output: 0
+console.log(strStr("leetcode", "leeto")); // Output: -1
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
