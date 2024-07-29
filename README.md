@@ -12,7 +12,7 @@ Welcome to my LeetCode practice repository! This repository contains solutions t
 
 ## Introduction
 
-I am currently practicing coding problems on LeetCode to enhance my problem-solving skills and prepare for technical interviews. This repository is a collection of my solutions to these problems, categorized by difficulty and topic.
+I am currently practicing coding problems on LeetCode to enhance my problem-solving skills and prepare for technical interviews. This repository is a collection of my solutions to these problems, categorized by difficulty and topic. The problems are done in both javascript and python.
 
 ## Problem List
 
