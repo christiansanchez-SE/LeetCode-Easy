@@ -458,3 +458,28 @@ console.log(searchInsert([1, 3, 5, 6], 2)); // Output: 1
 console.log(searchInsert([1, 3, 5, 6], 7)); // Output: 4
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function(s) {
+    // Trim any leading or trailing spaces
+    s = s.trim();
+    // Split the string into words based on spaces
+    let words = s.split(' ');
+    // Return the length of the last word
+    return words[words.length - 1].length;
+};
+
+// Example 1
+let s1 = "Hello World";
+console.log(lengthOfLastWord(s1)); // Output: 5
+
+// Example 2
+let s2 = "   fly me   to   the moon  ";
+console.log(lengthOfLastWord(s2)); // Output: 4
+
+// Example 3
+let s3 = "luffy is still joyboy";
+console.log(lengthOfLastWord(s3)); // Output: 6

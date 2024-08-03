@@ -761,3 +761,28 @@ class Solution(object):
 # 1 <= s.length <= 104
 # s consists of only English letters and spaces ' '.
 # There will be at least one word in s.
+
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        words = s.strip().split()
+        return len(words[-1])
+
+# Example 1
+s = "Hello World"
+solution = Solution()
+print(solution.lengthOfLastWord(s))  # Output: 5
+
+# Example 2
+s = "   fly me   to   the moon  "
+print(solution.lengthOfLastWord(s))  # Output: 4
+
+# Example 3
+s = "luffy is still joyboy"
+print(solution.lengthOfLastWord(s))  # Output: 6
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+
