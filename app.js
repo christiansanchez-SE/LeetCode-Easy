@@ -483,3 +483,5 @@ console.log(lengthOfLastWord(s2)); // Output: 4
 // Example 3
 let s3 = "luffy is still joyboy";
 console.log(lengthOfLastWord(s3)); // Output: 6
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
