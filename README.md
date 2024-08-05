@@ -30,6 +30,7 @@ Here are some of the problems I've solved:
 10. [Search Insert Position](https://leetcode.com/problems/search-insert-position/)
 11. [Length of Last Word](https://leetcode.com/problems/length-of-last-word/description/)
 12. [Plus One](https://leetcode.com/problems/plus-one/description/)
+13. [Add Binary](https://leetcode.com/problems/add-binary/description/)
 
 ## Solutions
 
