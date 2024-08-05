@@ -28,7 +28,8 @@ Here are some of the problems I've solved:
 8. [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
 9. [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/)
 10. [Search Insert Position](https://leetcode.com/problems/search-insert-position/)
-11. [ Length of Last Word](https://leetcode.com/problems/length-of-last-word/description/)
+11. [Length of Last Word](https://leetcode.com/problems/length-of-last-word/description/)
+12. [Plus One](https://leetcode.com/problems/plus-one/description/)
 
 ## Solutions
 
