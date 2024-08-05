@@ -485,3 +485,32 @@ let s3 = "luffy is still joyboy";
 console.log(lengthOfLastWord(s3)); // Output: 6
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+    let n = digits.length;
+    
+    // Start from the end of the array
+    for (let i = n - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i] += 1;
+            return digits;
+        }
+        // If the digit is 9, it becomes 0
+        digits[i] = 0;
+    }
+    
+    // If all digits are 9, we need an extra digit at the beginning
+    digits.unshift(1);
+    return digits;
+};
+
+// Example usage:
+console.log(plusOne([1, 2, 3]));  // Output: [1, 2, 4]
+console.log(plusOne([4, 3, 2, 1]));  // Output: [4, 3, 2, 2]
+console.log(plusOne([9]));  // Output: [1, 0]
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
