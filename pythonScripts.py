@@ -849,3 +849,50 @@ print(solution.plusOne([9]))  # Output: [1, 0]
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
+# Add Binary
+
+# Given two binary strings a and b, return their sum as a binary string.
+
+# Example 1:
+# Input: a = "11", b = "1"
+# Output: "100"
+
+# Example 2:
+# Input: a = "1010", b = "1011"
+# Output: "10101"
+
+class Solution(object):
+    def addBinary(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
+        # Initialize the result as an empty string and carry as 0
+        result = ""
+        carry = 0
+        
+        # Make both strings of equal length by padding with zeros
+        max_length = max(len(a), len(b))
+        a = a.zfill(max_length)
+        b = b.zfill(max_length)
+        
+        # Iterate over the strings from the end to the beginning
+        for i in range(max_length - 1, -1, -1):
+            # Convert the binary characters to integers and add them along with the carry
+            total_sum = int(a[i]) + int(b[i]) + carry
+            carry = total_sum // 2  # Update the carry
+            result = str(total_sum % 2) + result  # Append the current bit to the result
+        
+        # If there is any carry left, append it to the result
+        if carry != 0:
+            result = "1" + result
+        
+        return result
+
+# Example usage:
+solution = Solution()
+print(solution.addBinary("11", "1"))  # Output: "100"
+print(solution.addBinary("1010", "1011"))  # Output: "10101"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #

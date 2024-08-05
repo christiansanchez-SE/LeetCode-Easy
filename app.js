@@ -514,3 +514,40 @@ console.log(plusOne([4, 3, 2, 1]));  // Output: [4, 3, 2, 2]
 console.log(plusOne([9]));  // Output: [1, 0]
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {string} a
+ * @param {string} b
+ * @return {string}
+ */
+var addBinary = function(a, b) {
+    let result = "";
+    let carry = 0;
+    
+    // Make both strings of equal length by padding with zeros
+    let maxLength = Math.max(a.length, b.length);
+    a = a.padStart(maxLength, '0');
+    b = b.padStart(maxLength, '0');
+    
+    // Iterate over the strings from the end to the beginning
+    for (let i = maxLength - 1; i >= 0; i--) {
+        // Convert the binary characters to integers and add them along with the carry
+        let sum = parseInt(a[i]) + parseInt(b[i]) + carry;
+        carry = Math.floor(sum / 2);  // Update the carry
+        result = (sum % 2) + result;  // Append the current bit to the result
+    }
+    
+    // If there is any carry left, append it to the result
+    if (carry !== 0) {
+        result = '1' + result;
+    }
+    
+    return result;
+};
+
+// Example usage:
+console.log(addBinary("11", "1"));  // Output: "100"
+console.log(addBinary("1010", "1011"));  // Output: "10101"
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
