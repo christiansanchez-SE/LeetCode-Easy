@@ -551,3 +551,35 @@ console.log(addBinary("1010", "1011"));  // Output: "10101"
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var mySqrt = function(x) {
+    if (x < 2) {
+        return x;
+    }
+
+    let left = 2, right = Math.floor(x / 2);
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        let num = mid * mid;
+
+        if (num === x) {
+            return mid;
+        } else if (num < x) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return right;
+};
+
+// Example usage:
+console.log(mySqrt(4));  // Output: 2
+console.log(mySqrt(8));  // Output: 2
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
