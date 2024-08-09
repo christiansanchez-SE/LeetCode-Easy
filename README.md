@@ -31,6 +31,7 @@ Here are some of the problems I've solved:
 11. [Length of Last Word](https://leetcode.com/problems/length-of-last-word/description/)
 12. [Plus One](https://leetcode.com/problems/plus-one/description/)
 13. [Add Binary](https://leetcode.com/problems/add-binary/description/)
+14. [Sqrt(x)](https://leetcode.com/problems/sqrtx/description/)
 
 ## Solutions
 
