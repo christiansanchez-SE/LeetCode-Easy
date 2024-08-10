@@ -615,3 +615,36 @@ console.log(climbStairs(3)); // Output: 3
 console.log(climbStairs(5)); // Output: 8
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val);
+ *     this.next = (next===undefined ? null : next);
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteDuplicates = function(head) {
+    // Start with the head of the list
+    let current = head;
+    
+    // Iterate through the linked list
+    while (current !== null && current.next !== null) {
+        // If the current value is the same as the next value
+        if (current.val === current.next.val) {
+            // Skip the next node
+            current.next = current.next.next;
+        } else {
+            // Move to the next node
+            current = current.next;
+        }
+    }
+    
+    // Return the modified list
+    return head;
+};
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
