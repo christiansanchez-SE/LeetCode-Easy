@@ -682,3 +682,32 @@ var merge = function(nums1, m, nums2, n) {
         p--;
     }
 };
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var inorderTraversal = function(root) {
+    // Helper function to perform inorder traversal
+    const inorder = (node) => {
+        if (node === null) {
+            return [];
+        }
+        return [...inorder(node.left), node.val, ...inorder(node.right)];
+    };
+    
+    // Start the inorder traversal from the root
+    return inorder(root);
+};
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
