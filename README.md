@@ -35,6 +35,8 @@ Here are some of the problems I've solved:
 15. [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
 16. [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/)
 17. [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/)
+18. [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/description/)
+19. 
 
 ## Solutions
 
