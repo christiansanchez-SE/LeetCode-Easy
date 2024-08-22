@@ -38,6 +38,7 @@ Here are some of the problems I've solved:
 18. [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/description/)
 19. [Same Tree](https://leetcode.com/problems/same-tree/description/)
 20. [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/description/)
+21. [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
  
 
 ## Solutions
