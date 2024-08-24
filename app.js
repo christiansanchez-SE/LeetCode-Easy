@@ -862,3 +862,5 @@ var isBalanced = function(root) {
     // An initial check from the root if it returns -1, then it's unbalanced
     return checkHeight(root) !== -1;
 };
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
