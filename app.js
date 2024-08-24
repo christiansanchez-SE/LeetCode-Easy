@@ -828,3 +828,37 @@ var sortedArrayToBST = function(nums) {
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isBalanced = function(root) {
+    // Helper function to check height and balance
+    function checkHeight(node) {
+        if (node === null) return 0;
+
+        // Recursively get the height of the left and right subtree
+        let leftHeight = checkHeight(node.left);
+        let rightHeight = checkHeight(node.right);
+
+        // If the subtree is already unbalanced, return -1
+        if (leftHeight === -1 || rightHeight === -1) return -1;
+
+        // If the current node causes the tree to be unbalanced
+        if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+
+        // Otherwise, return the height of the tree from the current node
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
+    // An initial check from the root if it returns -1, then it's unbalanced
+    return checkHeight(root) !== -1;
+};
