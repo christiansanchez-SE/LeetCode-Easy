@@ -41,6 +41,7 @@ Here are some of the problems I've solved:
 21. [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
 22. [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/)
 23. [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/description/)
+24. [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/description/)
  
 
 ## Solutions
