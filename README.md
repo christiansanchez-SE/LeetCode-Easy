@@ -43,6 +43,7 @@ Here are some of the problems I've solved:
 23. [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/description/)
 24. [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/description/)
 25. [Path Sum](https://leetcode.com/problems/path-sum/description/)
+26. [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/description/)
  
 
 ## Solutions
