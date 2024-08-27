@@ -1493,3 +1493,105 @@ class Solution(object):
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
+# Path Sum
+
+# Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
+
+# A leaf is a node with no children.
+
+ 
+
+# Example 1:
+
+
+# Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+# Output: true
+# Explanation: The root-to-leaf path with the target sum is shown.
+
+# Example 2:
+# Input: root = [1,2,3], targetSum = 5
+# Output: false
+# Explanation: There two root-to-leaf paths in the tree:
+# (1 --> 2): The sum is 3.
+# (1 --> 3): The sum is 4.
+# There is no root-to-leaf path with sum = 5.
+
+# Example 3:
+# Input: root = [], targetSum = 0
+# Output: false
+# Explanation: Since the tree is empty, there are no root-to-leaf paths.
+ 
+# Constraints:
+
+# The number of nodes in the tree is in the range [0, 5000].
+# -1000 <= Node.val <= 1000
+# -1000 <= targetSum <= 1000
+
+# Definition for a binary tree node.
+class TreeNode(object):
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution(object):
+    def hasPathSum(self, root, targetSum):
+        """
+        :type root: TreeNode
+        :type targetSum: int
+        :rtype: bool
+        """
+        if not root:
+            return False
+        
+        # If we're at a leaf node, check if the current path sum equals targetSum
+        if not root.left and not root.right:
+            return targetSum == root.val
+        
+        # Recursively check the left and right subtrees
+        return self.hasPathSum(root.left, targetSum - root.val) or \
+               self.hasPathSum(root.right, targetSum - root.val)
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+
+# Pascal's Triangle
+
+# Given an integer numRows, return the first numRows of Pascal's triangle.
+
+# In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
+
+# Example 1:
+# Input: numRows = 5
+# Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+
+# Example 2:
+# Input: numRows = 1
+# Output: [[1]]
+
+# Constraints:
+
+# 1 <= numRows <= 30
+
+class Solution(object):
+    def generate(self, numRows):
+        """
+        :type numRows: int
+        :rtype: List[List[int]]
+        """
+        # Initialize the result list
+        result = []
+        
+        for i in range(numRows):
+            # Start each row with [1]
+            row = [1] * (i + 1)
+            
+            # Fill in the interior values of the row
+            for j in range(1, i):
+                row[j] = result[i-1][j-1] + result[i-1][j]
+            
+            # Append the current row to the result list
+            result.append(row)
+        
+        return result
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #

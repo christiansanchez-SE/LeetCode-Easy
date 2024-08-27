@@ -903,3 +903,57 @@ var minDepth = function(root) {
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} targetSum
+ * @return {boolean}
+ */
+var hasPathSum = function(root, targetSum) {
+    if (root === null) {
+        return false;
+    }
+
+    // If the current node is a leaf node, check if the targetSum equals the node's value
+    if (root.left === null && root.right === null) {
+        return targetSum === root.val;
+    }
+
+    // Recursively check the left and right subtrees with the updated targetSum
+    return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+};
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+var generate = function(numRows) {
+    // Initialize the result array
+    let result = [];
+    
+    for (let i = 0; i < numRows; i++) {
+        // Start each row with [1]
+        let row = Array(i + 1).fill(1);
+        
+        // Fill in the interior values of the row
+        for (let j = 1; j < i; j++) {
+            row[j] = result[i - 1][j - 1] + result[i - 1][j];
+        }
+        
+        // Append the current row to the result array
+        result.push(row);
+    }
+    
+    return result;
+};
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
