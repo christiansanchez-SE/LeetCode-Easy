@@ -957,3 +957,24 @@ var generate = function(numRows) {
 };
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {number} rowIndex
+ * @return {number[]}
+ */
+var getRow = function(rowIndex) {
+    // Initialize the first row of Pascal's triangle
+    let row = new Array(rowIndex + 1).fill(1);
+    
+    // Update the row in place for each level of Pascal's Triangle
+    for (let i = 1; i < rowIndex; i++) {
+        // Iterate backwards to ensure we use the previous row's values
+        for (let j = i; j > 0; j--) {
+            row[j] += row[j - 1];
+        }
+    }
+    
+    return row;
+};
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
