@@ -978,3 +978,33 @@ var getRow = function(rowIndex) {
 };
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    // Initialize min_price to a very high value and max_profit to 0
+    let min_price = Infinity;
+    let max_profit = 0;
+    
+    // Loop through all prices
+    for (let price of prices) {
+        // Update min_price if the current price is lower
+        if (price < min_price) {
+            min_price = price;
+        }
+        
+        // Calculate potential profit
+        let profit = price - min_price;
+        
+        // Update max_profit if this profit is higher
+        if (profit > max_profit) {
+            max_profit = profit;
+        }
+    }
+    
+    return max_profit;
+};
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
