@@ -1008,3 +1008,17 @@ var maxProfit = function(prices) {
 };
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    // Normalize the string: convert to lowercase and remove non-alphanumeric characters
+    let cleanedString = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    
+    // Check if the cleaned string is equal to its reverse
+    return cleanedString === cleanedString.split('').reverse().join('');
+};
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
