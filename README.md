@@ -45,6 +45,8 @@ Here are some of the problems I've solved:
 25. [Path Sum](https://leetcode.com/problems/path-sum/description/)
 26. [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/description/)
 27. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+28. [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+29. [Single Number](https://leetcode.com/problems/single-number/description/)
  
 
 ## Solutions
