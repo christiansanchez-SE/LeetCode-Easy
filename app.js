@@ -1022,3 +1022,22 @@ var isPalindrome = function(s) {
 };
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums) {
+    // Initialize a variable to store the result
+    let result = 0;
+    
+    // XOR all numbers together
+    for (let num of nums) {
+        result ^= num;
+    }
+    
+    // The result will be the single number
+    return result;
+};
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
