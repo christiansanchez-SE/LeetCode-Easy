@@ -1041,3 +1041,41 @@ var singleNumber = function(nums) {
 };
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var hasCycle = function(head) {
+    if (!head || !head.next) {
+        return false;
+    }
+    
+    // Initialize two pointers, slow and fast
+    let slow = head;
+    let fast = head;
+    
+    // Traverse the list
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next;          // Move slow by 1 step
+        fast = fast.next.next;     // Move fast by 2 steps
+        
+        // If slow and fast pointers meet, there is a cycle
+        if (slow === fast) {
+            return true;
+        }
+    }
+    
+    // If the fast pointer reaches the end, there is no cycle
+    return false;
+};
+
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
