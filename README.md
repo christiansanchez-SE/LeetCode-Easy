@@ -47,6 +47,8 @@ Here are some of the problems I've solved:
 27. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 28. [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
 29. [Single Number](https://leetcode.com/problems/single-number/description/)
+30. [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/description/)
+31. [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/description/)
  
 
 ## Solutions
