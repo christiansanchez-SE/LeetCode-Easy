@@ -1101,7 +1101,7 @@ var postorderTraversal = function(root) {
     let stack2 = [];
     let result = [];
     
-    // Process all nodes
+    // Traverse the tree
     while (stack1.length > 0) {
         let node = stack1.pop();
         stack2.push(node);
@@ -1115,7 +1115,7 @@ var postorderTraversal = function(root) {
         }
     }
     
-    // Stack2 will have nodes in postorder order
+    // Extract nodes from stack2 to result (postorder traversal)
     while (stack2.length > 0) {
         let node = stack2.pop();
         result.push(node.val);
@@ -1123,5 +1123,6 @@ var postorderTraversal = function(root) {
     
     return result;
 };
+
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
