@@ -66,7 +66,7 @@ The solutions are organized in folders by problem difficulty and topic. Each sol
 
 2. Navigate to the problem folder and run the solution:
     ```bash
-    python easy/two_sum.py
+    python easy/
     ```
 
 3. Explore the solutions and learn from the explanations provided in the comments.
